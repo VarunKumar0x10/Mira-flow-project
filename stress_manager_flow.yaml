@@ -1,0 +1,50 @@
+version: "0.0.1"
+metadata:
+  name: "stress-buster"
+  description: "This flow helps you manage stress by providing coping mechanisms and suggestions."
+  author: "varunkumar0x10"
+  tags: [wellbeing, stress, anxiety, coping, ai, chatbot]
+  private: false
+
+inputs:
+  stress_reason: 
+    type: string
+    description: "Please describe the source of your stress or anxiety."
+    required: true
+    example: "I haven't studied for my upcoming exams and I'm feeling overwhelmed."
+
+model:
+  provider: "meta"
+  name: "llama-3.3-70b-instruct"
+
+prompt: |
+  "I am feeling stressed and anxious due to: {stress_reason} 
+  Please help me by telling the solution and how to cope with the sitution.
+
+readme: |
+  # Stress Buster Flow
+
+  This flow assists in stress management by providing personalized coping mechanisms and suggestions.
+
+  **How it works:**
+
+  1. **Describe your stress:** Input the reason for your stress or anxiety in detail. 
+
+  2. **Receive personalized guidance:** The flow will use an LLM to:
+     * Identify potential causes of your stress.
+     * Suggest calming techniques (e.g., deep breathing, mindfulness).
+     * Provide practical coping mechanisms (e.g., exercise, spending time in nature).
+     * Offer advice on how to reframe your thoughts or approach the challenge.
+     * Suggest actions you can take to address the underlying cause of your stress.
+
+  **Example Input:**
+
+  > I haven't studied for my upcoming exams and I'm feeling overwhelmed.
+
+  **Disclaimer:**
+
+  * The quality of the response will depend on the complexity of the query and the capabilities of the LLM. 
+  * The LLM may not always provide accurate or complete information. 
+  * It is essential to verify the information provided by the LLM with reliable sources.
+
+  **Developed by:** Varun Kumar

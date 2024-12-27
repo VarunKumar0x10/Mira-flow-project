@@ -1,0 +1,72 @@
+version: "0.0.1"
+metadata:
+ name: "Study-Companion"
+ description: "This flow can help you in study and homework."
+ author: "varunkumar0x10"
+ tags: [academic,study,ai,chatbot]
+ private: false
+
+inputs:
+  input1: 
+    type: string
+    description: "Select your class/level" 
+    required: true
+    example: "Class 10, Grade 8, Undergraduate" 
+
+  input2: 
+    type: string
+    description: "Choose topic"
+    required: true
+    example: "Science, English Literature, Calculus"
+
+  input3: 
+    type: string
+    description: "Ask your doubt/query"
+    required: true
+    example: "What is photosynthesis?" 
+
+  input4: 
+    type: string 
+    description: "Desired length of answer (optional)"
+    required: false 
+    example: "short or detailed"
+
+model:
+  provider: "meta"
+  name: "llama-3.3-70b-instruct"
+
+
+dataset:
+   source: "varunkumar0x10/cbsestudydata"
+
+prompt: |
+  I am a student studying at {input1}. I am learning about {input2}. 
+  I have a doubt: {input3}. 
+  Please answer the query in approximate length of {input4}.
+  Include examples and then provide a few practice problems related to this concept. 
+
+
+readme: |
+  This flow assists students with their studies and homework. 
+
+  **How it works:**
+
+  1. **Select your class/level:** Specify your current academic level (e.g., "Class 10," "Grade 8," "Undergraduate").
+  2. **Choose topic:** Select the subject or topic you are studying (e.g., "Science," "English Literature," "Calculus").
+  3. **Ask your doubt/query:** Enter the specific question or concept you don't understand.
+  4. **(Optional) Desired length of answer:** Specify whether you prefer a short or detailed explanation.
+
+  The flow will then use an LLM to:
+    * Explain the concept in the requested detail.
+    * Provide relevant examples to illustrate the concept.
+    * Generate a few practice problems to help you understand and apply the concept.
+
+  **Disclaimer:**
+
+  * The quality of the response will depend on the complexity of the query and the capabilities of the LLM. 
+  * The LLM may not always provide accurate or complete information. 
+  * It is essential to verify the information provided by the LLM with reliable sources.
+
+  Developed by Varun Kumar
+
+  
